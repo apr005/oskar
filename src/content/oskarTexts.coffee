@@ -6,97 +6,97 @@ String.prototype.format = ->
 
 OskarTexts =
   statusText:
-    '1': 'pretty bad'
-    '2': 'a bit down'
-    '3': 'alright'
-    '4': 'really good'
-    '5': 'awesome'
+    '1': 'pas bien du tout'
+    '2': 'un peu triste'
+    '3': 'bien'
+    '4': 'super bien'
+    '5': 'merveilleusement bien'
 
-  introduction: "Hey {0}! Let me quickly introduce myself.\nMy name is Oskar, and the team has drafted me in to be their new happiness coach on Slack. I'm not going to bother you a lot, but every once in a while (usually twice a day), I'm gonna ask how you feel. Ready? *Just reply to this message and we'll give is a try* :smile:"
+  introduction: "Salut {0} ! Permets-moi de me présenter rapidement.\nJe m\'appelle Oskar et j\'ai atterri ici parce qu\'ARIS m\'a embauché pour être son coach en bien-être sur Slack. Ne t\'inquiète pas, je ne t\'embêterai pas souvent... Juste deux fois par jour, en général ! Bon, maintenant, je vais te demander comment tu te sens. Prêt·e ? *Réponds juste à ce message que je t\'explique la suite* :smile:"
 
-  firstMessage: "Alright! From now on, I'll check in once in a while to ask how you're feeling?'\n\nYou can reply to me with a number between 1 and 5, and I'll keep track of your answers over time and share them with your team.\n\nOK? Let's give it a try: *How do you feel right now?*\n
-          (5) :heart_eyes_cat: Awesome\n
-          (4) :smile: Really good\n
-          (3) :neutral_face: Alright\n
-          (2) :pensive: A bit down\n
-          (1) :tired_face: Pretty bad\n"
+  firstMessage: "Super ! À partir de maintenant, je viendrai te faire un petit coucou de temps en temps pour te demander comment tu vas. Et tu n\'auras qu\'à me répondre avec un chiffre entre 1 et 5 !\n\nJe suis un écureuil un peu bavard donc je dois te prévenir que, comme avec les noisettes, je fais des provisions : je garderai tes réponses quelque part en mémoire et je me permettrai de les partager avec tes collègues.\n\nAllez, on essaye ? *Comment te sens-tu là, tout de suite ?*\n
+          (5) :heart_eyes: Merveilleusement bien\n
+          (4) :smile: Super bien\n
+          (3) :slightly_smiling_face: Bien\n
+          (2) :pensive: Un peu triste\n
+          (1) :sob: Pas bien du tout\n"
 
-  firstMessageSuccess: "That was easy, wasn't it? :smile: I'm gonna disappear for a few hours now, but I'll check in on you in a couple of hours, or tomorrow, if I miss you." # todo: is now afternoon or next day"
+  firstMessageSuccess: "C\'était facile, non ? :smile: Bon, je dois m\'éclipser, tes collègues m\'attendent ! Je reviendrai te voir demain, ou dans quelques heures si tu me manques déjà." # todo: is now afternoon or next day"
 
-  firstMessageFailure: "Whoops, it looks like you're trying to tell me how you feel, but unfortunately I only understand numbers between 1 and 5. Can you give it another go?"
+  firstMessageFailure: "Oups, j\'ai bien l\'impression que tu essayes de me dire comment tu te sens mais j\'ai encore un peu de mal avec le français ou la LSF... Je m\'en sors mieux avec les chiffres entre 1 et 5. Tu veux bien réessayer pour moi ? :grin:"
 
   requestFeedback:
     random: [
-      "Hey {0}, How are you feeling right now? Hit me with a number and I'll share it with the rest of our team.\n",
-      "Hello, me again! Just checking in to see how you're feeling. Want to share?\n",
-      "Nice to see you, {0}, Wanna tell me how you feel? A number between 1 and 5 is all I need.\n"
+      "Salut {0} ! Comment tu te sens ? Donne-moi un petit chiffre à partager avec tes collègues.\n",
+      "Hello ! C\'est re-moi ! Je voulais juste voir comment ça allait. Envie de partager ton humeur avec nous ?\n",
+      "Content de te voir, {0} ! Envie de nous dire comment tu te sens ? Un chiffre entre 1 et 5 me suffira !\n"
     ]
-    selection: "(5) :heart_eyes_cat: Awesome\n
-                (4) :smile: Really good\n
-                (3) :neutral_face: Alright\n
-                (2) :pensive: A bit down\n
-                (1) :tired_face: Pretty bad\n"
+    selection: "(5) :heart_eyes: Merveilleusement bien\n
+                (4) :smile: Super bien\n
+                (3) :slightly_smiling_face: Bien\n
+                (2) :pensive: Un peu triste\n
+                (1) :sob: Pas bien du tout\n"
     options: [
-      "Perhaps you missed my last message... I'd really love to hear how you're doing. Would you mind letting me know?"
-      "Hey, looks like you missed me last time, but if you can give me a number between 1-5 to let me know how you feel, I'll be on my way :smile:"
+      "Tu as peut-être raté mon dernier message... Ça bouge tout le temps à l\'ARIS ! J\'aimerais vraiment savoir si tout va bien pour toi. Ça ne t\'ennuierait pas de me le dire ?"
+      "Hey ! On dirait qu\'on s\'est ratés la dernière fois. C\'est un peu la folie à l\'ARIS aujourd\'hui ! Allez, un chiffre entre 1 et 5 et je m\'en vais, parole d\'écureuil ! :smile:"
     ]
 
-  faq: "Looks like you need a little help. Here's the link to the <http://oskar.herokuapp.com/faq|Oskar FAQ>"
+  faq: "On dirait que tu as besoin d\'aide, non ? Tu peux aller voir *Antony* ou la <http://oskar.herokuapp.com/faq|FAQ Oskar>"
 
   revealChannelStatus:
-    error: "*{0}* hasn\'t submitted a status yet."
-    status: "*{0}* is feeling *{1}/5*"
+    error: "*{0}* n\'a pas encore partagé son état."
+    status: "*{0}* se sent *{1}/5*"
     message: "\n>\"{0}\""
 
   revealUserStatus:
-    error: "Oh, it looks like I haven\'t heard from {0} for a while. Sorry!"
-    status: "*{0}* is feeling *{1}/5*"
+    error: "Attends, je vérifie... Hum, on dirait que je n\'ai pas eu de nouvelles de {0} depuis un petit moment. Désolé !"
+    status: "*{0}* se sent *{1}/5*"
     message: "\n>\"{0}\""
 
-  newUserFeedback: "*{0}* is feeling *{1}/5*\n>\"{2}\""
+  newUserFeedback: "*{0}* se sent *{1}/5*\n>\"{2}\""
 
   alreadySubmitted: [
-    "Oops, looks like you've already told me how you feel in the last couple of hours. Let's check in again later.",
-    "Oh, hey there! I actually have some feedback from you already, in the last 4 hours. Let's leave it a little longer before we catch up :smile:",
-    "Easy, tiger! I know you love our number games, but let\'s wait a bit before we play again! I'll ping you in a few hours to see how you're doing."
+    "On dirait que tu m\'as déjà dit comment tu te sentais il n\'y a pas si longtemps... On en reparle un peu plus tard ! :wink:",
+    "Oh, coucou ! Tu m\'as déjà donné ton humeur dans les 4 dernières heures... On attend encore un peu et on en rediscute ? :smile:",
+    "Doucement, gourmand·e ! Je sais que tu adores nos petits jeux de chiffres, mais attendons un peu avant de rejouer ensemble :wink: Promis, je te ferai signe d\'ici quelques heures !"
   ]
 
   invalidInput: [
-    "Oh! I'm not sure what you meant, there: I only understand numbers between 1 and 5. Do you mind phrasing that a little differently?",
-    "Oh! I'm not sure what you meant, there: I only understand numbers between 1 and 5. Do you mind phrasing that a little differently?",
-    "I\'d really love to understand what you\'re saying, but until I become a little more educated, I'll need you to stick to using numbers between 1 and 5 to tell me how you feel."
+    "Euh, je ne suis pas sûr de ce que tu veux dire... Le français et la LSF, c\'est encore nouveau pour moi, tu sais ? Ça t\'ennuierait de passer par un chiffre entre 1 et 5 ? :kissing_heart:",
+    "Je pourrais faire semblant, mais je vais être honnête : je ne comprends ni le français, ni la LSF... :sweat_smile: Tu me traduis ça par un chiffre entre 1 et 5 ?",
+    "J\'aimerais vraiment comprendre tout ce que tu me dis, mais j\'attends encore ma PPS pour pouvoir suivre des cours de français et de LSF... En attendant, ça te va si on passe par des chiffres entre 1 à 5 ? :sweat_smile:"
   ]
 
   lowFeedback: [
-    "That sucks. I was really hoping you'd be feeling a little better than that. *Is there anything I should know?*",
-    "Oh dear :worried: I'm having a rough day over here too... :tired_face: *Wanna tell me a little more?* Perhaps one of our teammates will be able to help out.",
-    "Ah, man :disappointed: I really hate to hear when a friend is having a rough time. *Wanna explain a little more?* "
+    "Ça craint ! J\'espérais vraiment que tu choisirais une autre réponse... *Est-ce que je peux faire quelque chose ? Qu\'est-ce que je peux dire à tes collègues ?*",
+    "Oh mince ! :worried: Je passe pas une super journée non plus, si ça peut te réconforter... :sob: *Tu veux m\'en dire plus ?* Peut-être qu\'un·e de tes collègues pourrait t\'aider...",
+    "Awww :disappointed: Je n\'aime pas quand un·e ami·e vit un moment difficile... *Tu veux nous dire ce qui t\'arrives ?* "
   ]
 
   averageFeedback: [
-    "Alright! Go get em :tiger: *If you've got something you want to share, feel free. If not, have a grrreat day!*",
-    "Good luck with powering through things. *If you've got something you want to share, feel free.*",
-    "That's alright. We can't all be having crazy highs and killer lows. *If you feel like telling me more, feel free!*"
+    "Ça marche ! Allez, je te laisse : tu as de belles choses à accomplir ! *Si tu veux partager quelque chose avec tes collègues, n\'hésite pas à l\'écrire maintenant. Sinon, passe une bonne journéeeeeee !* :sunny:",
+    "Bon courage pour le boulot ! *Si tu veux en dire plus sur ton humeur à tes collègues, n\'hésite pas.*",
+    "Entendu ! Je t\'envoie plein de courage ! *Si tu as envie d\'en dire plus sur ton humeur, n\'hésite pas!*"
   ]
 
   highFeedback: [
-    ":trophy: Winning! It's so great to hear that. *Why not type a message to let your team know why things are going so well?*",
-    ":thumbsup: looks like you're on :fire: today. *Is there anything you'd like to share with the team?*",
-    "There's nothing I like more than great feedback! :clap::skin-tone-4: *What's made you feel so awesome today?*"
+    ":trophy: On a un vainqueur ! Je suis ravi de lire ça. *Pourquoi ne pas écrire un petit message pour dire à tes collègues pourquoi tu te sens si bien ?*",
+    ":thumbsup: Hé, mais tu es _on fire_ :fire: aujourd\'hui ! *Tu veux en dire plus à tes collègues ?*",
+    "Ah, j\'adore quand les gens sont d\'humeur exceptionnelle ! :clap::skin-tone-2: *Veux-tu dire à tes collègues ce qui te met de si bonne humeur ?*"
   ]
 
   # feedback already received
   feedbackReceived: [
-    "Thanks a lot, buddy! Keep up the good work!",
-    "You\'re a champion. Thanks for the input and have a great day!",
-    "That\'s really helpful. I wish you good luck with everything today!"
+    "Merci, très cher·e ! Continue à travailler comme ça, tout le monde adore ce que tu fais pour l\'ARIS !",
+    "C\'est noté, champion·ne ! Merci pour ta réponse et bonne journée à l\'ARIS !",
+    "Super, ça m\'aide beaucoup ! Plein de bonnes ondes pour ta journée à l\'ARIS !"
   ]
 
   # feedback received
   feedbackMessageReceived: [
-    "Thanks for sharing with me, my friend. Let's catch up again soon.",
-    "Thanks for being so open! Let's catch up in a few hours.",
-    "Gotcha. I've pinged that message to the rest of the team."
+    "Merci de m\'en avoir parlé ! :wink: On se revoit plus tard avec plaisir !",
+    "Merci pour ta franchise ! On se reparle dans quelques heures.",
+    "Compris ! Je me suis permis d\'en toucher un mot à tes collègues :wink:"
   ]
 
 module.exports = OskarTexts
